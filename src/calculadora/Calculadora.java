@@ -213,14 +213,12 @@ public class Calculadora extends JFrame{
 	}
 	void crearCalculadora() {
 		
-		this.setSize(515, 600);
+		this.setSize(500, 650);
 		
 		JPanel calculadora = new JPanel();
 		calculadora.setSize(this.getWidth(),this.getHeight());
 		calculadora.setLocation(0,0);
 		calculadora.setLayout(new BorderLayout());
-		calculadora.setBackground(Color.decode("#252428"));
-		//calculadora.add(calculadora, BorderLayout.NORTH);
 		calculadora.setBackground(Color.black);
 		this.add(calculadora);
 
@@ -247,7 +245,7 @@ public class Calculadora extends JFrame{
 		acciones.setBackground(Color.green); 
 		calculadora.add(acciones, BorderLayout.EAST);
 
-		String actions_texts[]= {"+","","","","", "CE"};
+		String actions_texts[]= {"+","-","*","/","=", "CE"};
 		for(int i = 0; i< actions_texts.length; i++) {
 			acciones.add(new JButton(actions_texts[i]));
 			

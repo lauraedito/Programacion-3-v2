@@ -2,9 +2,17 @@
 
 package ventana;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -34,9 +42,11 @@ public class Ventana extends JFrame{
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (200,200));
 		setLayout(null);
-		//crear();
+		// crear();
 		//crearPanel2();
-		crearPanel3();
+		//crearPanel3();
+		//crearIntereses();
+		 dibujo ();
 	}
 	
 	void crear () {
@@ -306,5 +316,219 @@ public class Ventana extends JFrame{
 		panel2.add(singUp);
 		
 	}
+	
+	void crearIntereses (){
+		this.setSize(500, 700);
+		
+		JPanel panelInteres= new JPanel();
+		
+		panelInteres.setSize(this.getWidth(),this.getHeight());
+		panelInteres.setLocation(0,0);
+		panelInteres.setLayout(null);
+		panelInteres.setBackground(Color.WHITE);
+		add(panelInteres, BorderLayout.CENTER);
+		
+		
+		//texto de interes
+		JLabel etiquetaInteres = new JLabel("Interés");
+		
+		etiquetaInteres.setFont(new Font("Georgia", Font.BOLD,20));
+		etiquetaInteres.setForeground(Color.decode("#FE0200"));
+		etiquetaInteres.setBounds(40, 10, 100, 20);
+		panelInteres.add(etiquetaInteres, BorderLayout.NORTH);
+		
+		
+		
+		JPanel interes = new JPanel();
+		interes.setBounds(40, 50, 405,300);
+		
+		interes.setLayout(null);
+		interes.setBackground(Color.decode("#A1FBA3"));
+		this.getContentPane().add(interes);
+		panelInteres.add(interes, BorderLayout.NORTH); 
+		
+		JLabel etiquetaCapital = new JLabel("Capital: ");
+		etiquetaCapital.setFont(new Font("Calibri", Font.BOLD,15));
+		etiquetaCapital.setForeground(Color.black);
+		etiquetaCapital.setBounds(50,50, 100, 20);
+		interes.add(etiquetaCapital);
+		
+		JTextField cajaTexto = new JTextField();
+		cajaTexto.setBounds(160 ,50, 200, 30);
+		interes.add(cajaTexto);
+		
+		/////
+		JLabel etiquetaTiempo = new JLabel("Tiempo: ");
+		etiquetaTiempo.setFont(new Font("Calibri", Font.BOLD,15));
+		etiquetaTiempo.setForeground(Color.black);
+		etiquetaTiempo.setBounds(50,100, 100, 20);
+		interes.add(etiquetaTiempo);
+		
+		JTextField cajaTexto2 = new JTextField();
+		cajaTexto2.setBounds(160 ,100, 200, 30);
+		interes.add(cajaTexto2);
+		
+		JLabel etiquetaTasa = new JLabel("Tasa de interés: ");
+		etiquetaTasa.setFont(new Font("Calibri", Font.BOLD,15));
+		etiquetaTasa.setForeground(Color.black);
+		etiquetaTasa.setBounds(50,150, 150, 20);
+		interes.add(etiquetaTasa);
+		
+		JTextField cajaTexto3 = new JTextField();
+		cajaTexto3.setBounds(160 ,150, 200, 30);
+		interes.add(cajaTexto3);
+		
+		
+		JPanel resultados = new JPanel();
+		resultados.setBounds(40, 400, 405,220);
+		resultados.setLayout(null);
+		resultados.setBackground(Color.decode("#FC9493"));
+		this.getContentPane().add(resultados);
+		panelInteres.add(resultados, BorderLayout.SOUTH);
+		
+		//
+		
+		JLabel etiquetaResultadoInteres = new JLabel("Interés: ");
+		etiquetaResultadoInteres.setFont(new Font("Calibri", Font.BOLD,15));
+		etiquetaResultadoInteres.setForeground(Color.black);
+		etiquetaResultadoInteres.setBounds(50,60, 150, 20);
+		resultados.add(etiquetaResultadoInteres);
+		
+		JTextField cajaTextoResultado = new JTextField();
+		cajaTextoResultado.setBounds(160 ,60, 200, 30);
+		resultados.add(cajaTextoResultado);
+		
+		JLabel etiquetaResultadoMonto = new JLabel("Interés: ");
+		etiquetaResultadoMonto.setFont(new Font("Calibri", Font.BOLD,15));
+		etiquetaResultadoMonto.setForeground(Color.black);
+		etiquetaResultadoMonto.setBounds(50,140, 150, 20);
+		resultados.add(etiquetaResultadoMonto);
+		
+		JTextField cajaResultadoMonto = new JTextField();
+		cajaResultadoMonto.setBounds(160 ,140, 200, 30);
+		resultados.add(cajaResultadoMonto);
 
+
+	}
+	
+	void dibujo () {
+		JPanel panel = new JPanel();
+		
+		panel.setSize(this.getWidth(),this.getHeight());
+		panel.setLocation(0,0);
+		panel.setLayout(null);
+		panel.setBackground(Color.decode("#D3EAFF"));
+		this.getContentPane().add(panel);
+	}
+	
+	/*
+	public void paint(Graphics g){
+		super. paint(g);
+		Graphics2D g2d =(Graphics2D) g;
+		g2d.drawArc(100,100,100,200,45,180);
+		g2d.setColor(Color.black);
+		g2d.drawLine(0,0,500,500);
+		
+		g2d.drawOval( 50,50,80,80);
+		
+		int xS[]= {225,150,300,225};
+		int yS[]= {50,150,150,50};
+		g2d.drawPolyline(xS,xS,ABORT);
+		
+		g2d.drawRoundRect(250,350,200,200,25,25);
+		g2d.setColor(Color.BLUE);
+		g2d.drawString("Buenas Noches",500,200);
+		
+		g2d.fillArc(500, 100, 200, 200, 95, 200);
+		
+		g2d.fillOval(170,240,90,90);
+		
+		int xS2[]= {225,180,330,225};
+		int yS2[]= {90,180,180,80};
+		
+		g2d.fillPolygon(xS2, yS2,4);
+		
+		try {
+			BufferedImage imagen = ImageIO.read(new File("src/ayuda.png"));
+			g2d.drawImage(imagen, 200, 100, null);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+*/
+	public void paint(Graphics g){
+		super. paint(g);
+		Graphics2D g2d =(Graphics2D) g;
+		
+		g2d.setColor(Color.decode("#AC6B10"));
+		g2d.fillRect(0, 320, 1000, 34);
+		
+		g2d.setColor(Color.decode("#AC6B10"));
+		g2d.fillRect(0, 400, 1000, 34);
+		
+		g2d.setColor(Color.decode("#CB8E45"));
+	    int numPalos = 15; 
+	    int alturaCerca = 200; 
+	    int espacioEntrePalos = 50; 
+	     
+	     for (int i = 0; i < numPalos; i++) {
+	         int x = 50 + i * 80; 
+	         int y = 500 - alturaCerca; 
+	         g2d.fillRect(x, y, 35, alturaCerca);
+	     }
+		
+		g2d.setColor(Color.GRAY);
+	    g2d.fillRect(370, 30, 50, 70);
+		
+		 g2d.setColor(Color.decode("#A70B0A"));
+	     int[] xTecho = {100, 300, 500};
+	     int[] yTecho = {100, 50, 100};
+	     g2d.fillPolygon(xTecho, yTecho, 3);
+	     
+	       
+	        //casa
+	     g2d.setColor(Color.decode("#FCFFD0"));
+	     g2d.fillRect(100, 100, 400, 400);
+	     
+	     g2d.setColor(Color.decode("#6E76E5"));
+	     g2d.fillRect(160, 150, 80, 90);
+	     
+	      // puerta 
+	     g2d.setColor(Color.decode("#D86200"));
+	     g2d.fillRect(240, 300, 120, 200);
+	     
+	     
+	     
+	    //circulo
+	     g2d.setColor(Color.decode("#5B452D"));
+	     g2d.fillOval(329, 400, 15, 15); 
+	     
+	     
+	     
+		//pasto
+	     g2d.setColor(Color.decode("#089A00"));
+	     g2d.fillRect(0, 500, 1000, 200);
+	     
+	     g2d.setColor(Color.decode("#0ED403"));
+	     g2d.fillRect(0, 550, 1000, 400);
+	     
+	     g2d.setColor(Color.decode("#F2ECB1"));
+	     g2d.fillRect(0, 600, 1000, 400);
+	     
+	     g2d.setColor(Color.decode("#754B09"));
+	     g2d.fillRect(0, 650, 1000, 400);
+	     
+	     //banqueta
+	     g2d.setColor(Color.GRAY);
+	     g2d.fillRect(50, 480, 500, 20);
+		////palos
+	     
+	     
+		
+	}
+	
+	
+	
 }
