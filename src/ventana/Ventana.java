@@ -417,7 +417,7 @@ public class Ventana extends JFrame{
 		panel.setSize(this.getWidth(),this.getHeight());
 		panel.setLocation(0,0);
 		panel.setLayout(null);
-		panel.setBackground(Color.decode("#D3EAFF"));
+		panel.setBackground(Color.decode("#B3EEFE"));
 		this.getContentPane().add(panel);
 	}
 	
@@ -458,6 +458,8 @@ public class Ventana extends JFrame{
 	}
 	
 */
+	
+	/*//casita con rejas
 	public void paint(Graphics g){
 		super. paint(g);
 		Graphics2D g2d =(Graphics2D) g;
@@ -523,12 +525,289 @@ public class Ventana extends JFrame{
 	     //banqueta
 	     g2d.setColor(Color.GRAY);
 	     g2d.fillRect(50, 480, 500, 20);
-		////palos
+		
 	     
 	     
 		
 	}
-	
-	
+	*/
+	public void paint(Graphics g){
+		super. paint(g);
+		Graphics2D g2d =(Graphics2D) g;
+		
+		//piso cafe
+		g2d.setColor(Color.decode("#EB9772"));
+		g2d.fillRect(0, 655, 1010, 40);
+		
+		//lineas
+		g2d.setColor(Color.black);
+		g2d.fillRect(0, 655, 1010, 5);
+		
+		
+		//piso cafe claro
+		g2d.setColor(Color.decode("#F8C6C0"));
+		g2d.fillRect(0, 640, 1010, 15);
+		
+		//lineas
+		g2d.setColor(Color.black);
+		g2d.fillRect(0, 637, 1010, 3);
+		
+		//arbusto
+		g2d.setColor(Color.black);
+		g2d.drawOval( 50,585,35,55);
+		g2d.setColor(Color.decode("#52D871"));
+		g2d.fillOval(50, 585, 34, 54);
+		
+		//marco del cubo marron pequenio
+		g2d.setColor(Color.black);
+	    g2d.fillRoundRect(49, 299, 53, 53,10,10);
+	    //este es el cubo marron
+		g2d.setColor(Color.decode("#FF9062"));
+	    g2d.fillRoundRect(51, 301, 49, 49,10,10);
+	    
+	    //puntitos negros
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(55, 305, 4, 4);
+	    //puntitos negros
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(90, 305, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(55, 340, 4, 4);
+	    //puntitos negros
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(90, 340, 4, 4);
+	    
+	    //marco del cubo marron pequenio que esta junto con otro
+	  	g2d.setColor(Color.black);
+	  	g2d.fillRoundRect(200, 100, 53, 53,10,10);
+	  	//este es el cubo marron
+	  	g2d.setColor(Color.decode("#FF9062"));
+	  	g2d.fillRoundRect(202, 102, 49, 49,10,10);
+	  	//puntitos
+	  	g2d.setColor(Color.BLACK);
+	    g2d.fillOval(207, 105, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(241, 105, 4, 4);
+	    //puntidos de abajo
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(207, 140, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(241, 140, 4, 4);
+	  	
+	    //cuadrado2 de al lado
+	  	g2d.setColor(Color.black);
+	  	g2d.fillRoundRect(253, 100, 53, 53,10,10);
+	  	//este es el cubo marron
+	  	g2d.setColor(Color.decode("#FF9062"));
+	  	g2d.fillRoundRect(255, 102, 49, 49,10,10);
+	    //cubo derecha
+	  	g2d.setColor(Color.black);
+	  	g2d.fillRoundRect(900, 153, 53, 53,10,10);
+	  	//este es el cubo marron
+	  	g2d.setColor(Color.decode("#FF9062"));
+	  	g2d.fillRoundRect(902, 155, 49, 49,10,10);
+	  	g2d.setColor(Color.BLACK);
+	  	//puntitos de la derecha
+	    g2d.fillOval(907, 160, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(940, 160, 4, 4);
+	  	g2d.setColor(Color.BLACK);
+	    g2d.fillOval(907, 194, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(940, 194, 4, 4);
+	  	
+	  	
+	  	
+	  	
+	  	//puntitos
+	  	g2d.setColor(Color.BLACK);
+	    g2d.fillOval(259, 105, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(295, 105, 4, 4);
+	  	g2d.setColor(Color.BLACK);
+	    g2d.fillOval(259, 140, 4, 4);
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(295, 140, 4, 4);
+	  	
+	  	//sombra negra del rectangulo azul
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(447, 420, 30, 220,10,10);
+	    //marco negro del rectangulo azul
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(295, 387, 157, 253,10,10);
+	    //rectangulo azul
+	    g2d.setColor(Color.decode("#84C0FF"));
+	    g2d.fillRoundRect(299, 389, 149, 245,10,10);
+		//sombra azul del rectangulo azul
+	    g2d.setColor(Color.decode("#188FDF"));
+	    g2d.fillRoundRect(442, 389, 6, 245,10,10);
+	    
+	    g2d.setColor(Color.decode("#188FDF"));
+	    g2d.fillRoundRect(296, 630, 149, 6,10,10);
+	    //circulos
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(305, 395, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(308, 397, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(423, 395, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(425, 397, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(423, 610, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(425, 613, 15, 15);
+	    
+	    
+	    
+	    //sombra negra del cuadrado cafe
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(338, 510, 30, 130,10,10);
+	    //marco negro del cuadrado beige que esta a un lado del arbusto
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(189, 484, 155, 155,10,10);
+	    //cuadrado relleno
+	    g2d.setColor(Color.decode("#FFC3B8"));
+	    g2d.fillRoundRect(192, 487, 149, 149,10,10);
+	    //sombra cafe de cuadro relleno
+	    g2d.setColor(Color.decode("#E69875"));
+	    g2d.fillRoundRect(335, 487, 6, 149,10,10);
+	    g2d.setColor(Color.decode("#E69875"));
+	    g2d.fillRoundRect(191, 630, 149, 6,10,10);
+	    //circulos
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(199, 490, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(201, 492, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(315, 490, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(317, 492, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(199, 610, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(201, 613, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(315, 610, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(317, 613, 15, 15);
+	    
+	    
+		
+	    //marco negro del rectangulo verdeoscuro
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(582, 505, 103, 132);
+	    //verde oscuro
+	    g2d.setColor(Color.decode("#1F831A"));
+	    g2d.fillRect(585, 513, 95, 125);
+	    
+	    //
+	    //verde claro palitos
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(589, 513, 3, 125);
+	    //palito2
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(598, 513, 7, 125);
+	    
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(610, 513, 2, 125);
+	    
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(640, 513, 4, 125);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(647, 513, 7, 125);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(659, 513, 2, 125);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(669, 513, 9, 125);
+	    
+	    
+	    
+	    
+	    //rectangulo que va arriba del otro
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(576, 500, 115, 50);
+	    
+	    g2d.setColor(Color.decode("#1F831A"));
+	    g2d.fillRect(579, 504, 109, 43);
+	    
+	    //palitos short
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(587, 504, 3, 43);
+	    //palito2
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(596, 504, 7, 43);
+	    
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(608, 504, 2, 43);
+	    
+	    g2d.setColor(Color.decode("#4DDA69"));
+	    g2d.fillRect(638, 504, 4, 43);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(645, 504, 7, 43);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(657, 504, 2, 43);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRect(667, 504, 9, 43);
+	    
+	    
+	    //cuadrado verde
+	  //sombra negra
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(940, 510, 30, 130,10,10);
+	    //marco negro del cuadrado beige que esta a un lado del arbusto
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(790, 484, 157, 155,10,10);
+	    //cuadrado relleno
+	    g2d.setColor(Color.decode("#51D96B"));
+	    g2d.fillRoundRect(792, 487, 152, 149,10,10);
+	    //sombra verde de cuadro relleno
+	    g2d.setColor(Color.decode("#1D451A"));
+	    g2d.fillRoundRect(790, 630,154,6,10,10);
+	    g2d.setColor(Color.decode("#1D451A"));
+	    g2d.fillRoundRect(938, 484,6,150,10,10);
+	    
+	    //circulos
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(918, 490, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(920, 492, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(795, 490, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(797, 492, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(918, 610, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(920, 613, 15, 15);
+	    
+	    g2d.setColor(Color.BLACK);
+	    g2d.fillOval(795, 610, 20, 20);
+	    g2d.setColor(Color.decode("#BABDC2"));
+	    g2d.fillOval(797, 613, 15, 15);
+	    
+	   /* 
+	    try {
+	        BufferedImage imagen = ImageIO.read(new File("src/header-mario.png"));
+	        g2d.drawImage(imagen, 200, 100, null);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	    */
+	    
+	}
 	
 }
