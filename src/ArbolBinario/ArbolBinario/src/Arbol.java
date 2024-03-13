@@ -97,9 +97,9 @@ public class Arbol {
     /*---------------------RECORRIDO POSTORDEN----------------------*/
     private void recorridoPostorden(Nodo nodo){
         if(nodo != null){
-            recorridoPostorden(nodo.getHojaIzquierda()); // Recorrer el subárbol izquierdo
-            recorridoPostorden(nodo.getHojaDerecha()); // Recorrer el subárbol derecho
-            System.out.print(nodo.getValor()+" "); // Visitar el nodo actual
+            recorridoPostorden(nodo.getHojaIzquierda()); 
+            recorridoPostorden(nodo.getHojaDerecha()); 
+            System.out.print(nodo.getValor()+" "); 
         }
     }
 
@@ -157,9 +157,47 @@ public class Arbol {
 		3.- Si los datos son iguales, la b�squeda se detiene y se muestra un mensaje que diga:
 		"El nodo X si existe en el arbol.", en caso contrario decir que "No existe el nodo".*/
    
+    //se busca el nodo sin for ni do while funciones recursivas
+   
 
-	
+    
 
+    private boolean buscarNodo(Nodo nodo, int valorBuscado) {
+        // Caso base: el nodo es nulo, lo que significa que no se ha encontrado el nodo
+        if (nodo == null) {
+            return false;
+        }
+        
+        // Comparar el valor buscado con el valor del nodo actual
+        if (valorBuscado == nodo.getValor()) {
+            // Si son iguales, se ha encontrado el nodo
+            return true;
+        } else if (valorBuscado < nodo.getValor()) {
+            // Si el valor buscado es menor, buscar en el subárbol izquierdo
+            return buscarNodo(nodo.getHojaIzquierda(), valorBuscado);
+        } else {
+            // Si el valor buscado es mayor, buscar en el subárbol derecho
+            return buscarNodo(nodo.getHojaDerecha(), valorBuscado);
+        }
+    }
+
+    public void buscar(int valorBuscado) {
+        // Comenzar la búsqueda desde la raíz
+        boolean encontrado = buscarNodo(this.raiz, valorBuscado);
+        
+        // Mostrar el resultado de la búsqueda
+        if (encontrado) {
+            System.out.println("El nodo " + valorBuscado + " sí existe en el árbol.");
+        } else {
+            System.out.println("No existe el nodo " + valorBuscado + " en el árbol.");
+        }
+    }
+
+
+    
+    
+    
+//////////////////
     
     public boolean removeNodo( int datoEliminar) {
         /*buscar el nodo a eliminar*/
@@ -217,6 +255,7 @@ public class Arbol {
      
         return false;
     }
+    
     
     private boolean removeNodoCaso2( Nodo nodo ) {
         /* Borrar el Nodo y el sub�rbol que ten�a pasa a ocupar su lugar.
@@ -287,6 +326,8 @@ public class Arbol {
         }
         return nodo;
     }
+    
+    //
     
 	public static void main(String[] args) {
 		Nodo n1 = new Nodo(4);
