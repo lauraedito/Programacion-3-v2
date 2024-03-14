@@ -225,7 +225,7 @@ public class Ventana extends JFrame{
 				
 				//mujer
 				type.setBorderPainted(true);
-				if(type.getText().length()<=0) {
+				if(type.isSelected()== false) {
 					type.setBorder(new LineBorder(Color.red,4));
 					
 				}else {
@@ -235,7 +235,7 @@ public class Ventana extends JFrame{
 				//hombre
 				
 				type1.setBorderPainted(true);
-				if(type1.getText().length()<=0) {
+				if(type1.isSelected()== false) {
 					type1.setBorder(new LineBorder(Color.red,4));
 					
 				}else {
