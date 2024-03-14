@@ -171,6 +171,31 @@ public class VentanaM extends JFrame{
 	    
 	    g2d.setColor(Color.decode("#EEF5FF"));
 	    g2d.fillOval(370, 390, 20, 35);
+	    
+	    g2d.setColor(Color.decode("#EEF5FF"));
+	    g2d.fillOval(520, 298, 20, 35);
+	    
+	    g2d.setColor(Color.decode("#EEF5FF"));
+	    g2d.fillOval(560, 238, 20, 35);
+	    
+	    //cuadros
+	    //cuadrado relleno
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(690, 535, 50, 50,10,10);
+	    g2d.setColor(Color.decode("#777576"));
+	    g2d.fillRoundRect(692, 537, 46, 46,10,10);
+	    
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(690, 485, 46, 46,10,10);
+	    g2d.setColor(Color.decode("#777576"));
+	    g2d.fillRoundRect(692, 537, 46, 46,10,10);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(690, 435, 46, 46,10,10);
+	    
+	    g2d.setColor(Color.black);
+	    g2d.fillRoundRect(690, 385, 46, 46,10,10);
 	}
 
 }

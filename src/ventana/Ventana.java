@@ -8,6 +8,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +33,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 
 
@@ -42,11 +45,11 @@ public class Ventana extends JFrame{
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (200,200));
 		setLayout(null);
-		// crear();
+		 crear();
 		//crearPanel2();
 		//crearPanel3();
 		//crearIntereses();
-		 dibujo ();
+		// dibujo ();
 	}
 	
 	void crear () {
@@ -95,6 +98,37 @@ public class Ventana extends JFrame{
 		boton.setBounds(10, 250, 120, 30);
 		panel.add(boton);
 		
+		boton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("hola");
+				
+				if(cajaTexto.getText().length()<=0) {
+					cajaTexto.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					cajaTexto.setBorder(new LineBorder(Color.GREEN,4));
+				}
+				
+				String contra = new String(contrasena.getPassword());
+				
+				if(contra.length()<=0) {
+					contrasena.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					contrasena.setBorder(new LineBorder(Color.GREEN,4));
+				}
+				
+				System.out.println(etiqueta2.getText());
+				System.out.println(etiqueta3.getText());
+				
+				
+
+			}
+		});
+		
+		
+		
 		//////
 		JPanel registro = new JPanel();
 		
@@ -119,6 +153,8 @@ public class Ventana extends JFrame{
 		JTextField cajaNombre = new JTextField();
 		cajaNombre.setBounds(10, 100, 300, 35);
 		registro.add(cajaNombre);
+	
+		
 		
 		
 		JCheckBox gusto1 = new JCheckBox ("estudiante");
@@ -166,6 +202,47 @@ public class Ventana extends JFrame{
 		JButton registroBtn = new JButton("Acceder" );
 		registroBtn.setBounds(10, 540, 120, 30);
 		registro.add(registroBtn);
+		
+		registroBtn.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("hola");
+				
+				if(cajaNombre.getText().length()<=0) {
+					cajaNombre.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					cajaNombre.setBorder(new LineBorder(Color.GREEN,4));
+				}
+				
+				if(tex.getText().length()<=0) {
+					tex.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					tex.setBorder(new LineBorder(Color.GREEN,4));
+				}
+				
+				
+				//mujer
+				type.setBorderPainted(true);
+				if(type.getText().length()<=0) {
+					type.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					type.setBorder(new LineBorder(Color.GREEN,4));
+				}
+				
+				//hombre
+				
+				type1.setBorderPainted(true);
+				if(type1.getText().length()<=0) {
+					type1.setBorder(new LineBorder(Color.red,4));
+					
+				}else {
+					type1.setBorder(new LineBorder(Color.GREEN,4));
+				}
+			}
+		});
 		
 		JMenuBar barra = new JMenuBar();
 		JMenu lista1 = new JMenu("Archivo");
@@ -533,6 +610,8 @@ public class Ventana extends JFrame{
 	*/
 	
 	
+	/*
+	
 	public void paint(Graphics g){
 		super. paint(g);
 		Graphics2D g2d =(Graphics2D) g;
@@ -801,15 +880,15 @@ public class Ventana extends JFrame{
 	    g2d.setColor(Color.decode("#BABDC2"));
 	    g2d.fillOval(797, 613, 15, 15);
 	    
-	   /* 
+	    
 	    try {
 	        BufferedImage imagen = ImageIO.read(new File("src/header-mario.png"));
 	        g2d.drawImage(imagen, 200, 100, null);
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-	    */
+	    
 	    
 	}
-	  
+	  */
 }
