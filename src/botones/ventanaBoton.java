@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class ventanaBoton extends JFrame{
@@ -49,6 +51,9 @@ public class ventanaBoton extends JFrame{
             }
         });
         
+        
+    
+        
 	}
 	
 	private void agregarBoton(JPanel panel) {
@@ -65,15 +70,34 @@ public class ventanaBoton extends JFrame{
 	    int indiceColor = rand.nextInt(colores.length); 
         Color colorAleatorio = Color.decode(colores[indiceColor]); 
 	    boton2.setBackground(colorAleatorio);
+	    
 
 
+	   
+	    
 	    int x = rand.nextInt(panel.getWidth() - ancho); 
 	    int y = rand.nextInt(panel.getHeight() - alto); 
 	    boton2.setBounds(x, y, ancho, alto);
 
+	    //
+	    boton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //JOptionPane.showMessageDialog(null, boton2.getText());
+            	Color botonColor = boton2.getBackground();
+            	
+            	String colorHexadecimal = String.format("#%02x%02x%02x", botonColor.getRed(), botonColor.getGreen(), botonColor.getBlue());
+            	boton2.setText(colorHexadecimal);
+            	JOptionPane.showMessageDialog(null, colorHexadecimal);
+            }
+        });
+	    //
+	    
+	    
 	    
 	    panel.add(boton2);
 	    panel.revalidate(); 
+	    panel.repaint();
 	}
 
 	
