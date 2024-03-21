@@ -36,7 +36,7 @@ public class VentanaM extends JFrame implements MouseListener {
 		panel.setSize(this.getWidth(),this.getHeight());
 		panel.setLocation(0,0);
 		panel.setLayout(null);
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(Color.decode("#DFC5F1"));
 		panel.addMouseListener(this);
 		//this.getContentPane().add(panel);
 		add(panel);
@@ -51,7 +51,7 @@ public class VentanaM extends JFrame implements MouseListener {
 	    int alto = rand.nextInt(51) + 50;  
 
 
-	    JButton boton2 = new JButton("Hola");
+	    JButton boton2 = new JButton("");
 	    boton2.setFont(new Font("Oswald", Font.BOLD, 20));
 	    boton2.setSize(ancho, alto);
 
@@ -72,12 +72,18 @@ public class VentanaM extends JFrame implements MouseListener {
 	    boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+            	
             	Color botonColor = boton2.getBackground();
             	
             	String colorHexadecimal = String.format("#%02x%02x%02x", botonColor.getRed(), botonColor.getGreen(), botonColor.getBlue());
             	boton2.setText(colorHexadecimal);
-            	JOptionPane.showMessageDialog(null, colorHexadecimal);
+            	//JOptionPane.showMessageDialog(null, colorHexadecimal);
+            	
+            	panel.remove(boton2); 
+            	
+                panel.revalidate();
+                panel.repaint();
+                
             }
         });
 	    
@@ -85,8 +91,10 @@ public class VentanaM extends JFrame implements MouseListener {
 	    
 	    
 	    panel.add(boton2);
+	    //panel.remove(boton2);
 	    panel.revalidate(); 
 	    panel.repaint();
+	     
 	}
 	
 	
@@ -95,6 +103,7 @@ public class VentanaM extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
 		
 		agregarBoton( e);
+		
         
     }
 
