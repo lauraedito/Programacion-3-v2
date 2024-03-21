@@ -18,6 +18,7 @@ public class VentanaM extends JFrame implements MouseListener {
 	
 	Random rand = new Random();
 	private JPanel panel;
+	private String[] colores = {"#1443DA", "#A314DA", "#F473EB", "#4CE7E2", "#E74C6D"};
 	
 	public VentanaM() {
 		this.setSize(700, 700);
@@ -118,7 +119,14 @@ public class VentanaM extends JFrame implements MouseListener {
 	    public void mouseEntered(MouseEvent e) {}
 
 	    @Override
-	    public void mouseExited(MouseEvent e) {}
+	    public void mouseExited(MouseEvent e) {
+	    	 int indiceColor = rand.nextInt(colores.length);
+	    	 Color colorAleatorio = Color.decode(colores[indiceColor]);
+	    	 panel.setBackground(colorAleatorio);
+	    	 
+	    	 panel.revalidate(); 
+	 	     panel.repaint();
+	    }
 	
 	
 	
