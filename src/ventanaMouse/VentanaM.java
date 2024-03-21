@@ -1,62 +1,51 @@
-package botones;
+package ventanaMouse;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class ventanaBoton extends JFrame {
+public class VentanaM extends JFrame implements MouseListener {
 	
 	Random rand = new Random();
+	private JPanel panel;
 	
-	public ventanaBoton() {
+	public VentanaM() {
 		this.setSize(700, 700);
-		setTitle("Botones");
+		setTitle("Botones Mouse");
 		setResizable(true);
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (200,200));
 		setLayout(null);
-		panelBoton ();
+		panelMouse ();
 		
 	}
-	
-	void panelBoton () {
-		JPanel panel = new JPanel();
+
+	void panelMouse () {
+		panel = new JPanel();
 		
 		panel.setSize(this.getWidth(),this.getHeight());
 		panel.setLocation(0,0);
 		panel.setLayout(null);
-		panel.setBackground(Color.decode("#EBE5FD"));
-		this.getContentPane().add(panel);
+		panel.setBackground(Color.WHITE);
+		panel.addMouseListener(this);
+		//this.getContentPane().add(panel);
+		add(panel);
 		
-		JButton boton = new JButton("Presioname");
-        boton.setBounds(270, 300, 200, 50); 
-        boton.setBackground(Color.decode("#562774"));
-        boton.setForeground(Color.WHITE);
-        boton.setFont(new Font("Oswald", Font.BOLD, 20));
-        panel.add(boton);
-        
-        boton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	agregarBoton(panel);
-                 
-            }
-        });
-        
-        
-    
-        
+		        
+     
+       
 	}
-	
-	private void agregarBoton(JPanel panel) {
+	private void agregarBoton(MouseEvent e) {
 	    
 	    int ancho = rand.nextInt(151) + 50; 
 	    int alto = rand.nextInt(51) + 50;  
@@ -75,15 +64,15 @@ public class ventanaBoton extends JFrame {
 
 	   //aquì
 	    
-	    int x = rand.nextInt(panel.getWidth() - ancho); //  int x = rand.nextInt(700); 
-	    int y = rand.nextInt(panel.getHeight() - alto); //int y = rand.nextInt(700); 
+	    int x = e.getX(); //  int x = rand.nextInt(700); 
+	    int y = e.getY(); //int y = rand.nextInt(700); 
 	    boton2.setBounds(x, y, ancho, alto);
 
-	    //
+	    
 	    boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //JOptionPane.showMessageDialog(null, boton2.getText());
+                
             	Color botonColor = boton2.getBackground();
             	
             	String colorHexadecimal = String.format("#%02x%02x%02x", botonColor.getRed(), botonColor.getGreen(), botonColor.getBlue());
@@ -91,7 +80,7 @@ public class ventanaBoton extends JFrame {
             	JOptionPane.showMessageDialog(null, colorHexadecimal);
             }
         });
-	    //
+	    
 	    
 	    
 	    
@@ -99,8 +88,29 @@ public class ventanaBoton extends JFrame {
 	    panel.revalidate(); 
 	    panel.repaint();
 	}
-
 	
 	
+	
+	@Override
+    public void mouseClicked(MouseEvent e) {
+		
+		agregarBoton( e);
+        
+    }
 
+	    
+	    @Override
+	    public void mousePressed(MouseEvent e) {}
+
+	    @Override
+	    public void mouseReleased(MouseEvent e) {}
+
+	    @Override
+	    public void mouseEntered(MouseEvent e) {}
+
+	    @Override
+	    public void mouseExited(MouseEvent e) {}
+	
+	
+	
 }
