@@ -81,8 +81,7 @@ public class VentanaM extends JFrame implements MouseListener {
             	//JOptionPane.showMessageDialog(null, colorHexadecimal);
             	
             	panel.remove(boton2); 
-            	
-                panel.revalidate();
+            	panel.revalidate();
                 panel.repaint();
                 
             }
@@ -120,12 +119,14 @@ public class VentanaM extends JFrame implements MouseListener {
 
 	    @Override
 	    public void mouseExited(MouseEvent e) {
+	    	/*
 	    	 int indiceColor = rand.nextInt(colores.length);
 	    	 Color colorAleatorio = Color.decode(colores[indiceColor]);
 	    	 panel.setBackground(colorAleatorio);
 	    	 
 	    	 panel.revalidate(); 
 	 	     panel.repaint();
+	 	     */
 	    }
 	
 	
