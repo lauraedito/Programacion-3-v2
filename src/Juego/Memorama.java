@@ -64,6 +64,7 @@ public class Memorama extends JFrame {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
 	                botonSeleccionado(boton);
+	                
 	            }
 	        });
 	        botones.add(boton);
@@ -96,8 +97,8 @@ public class Memorama extends JFrame {
 	                public void actionPerformed(ActionEvent e) {
 	                    boton.setEnabled(true);
 	                    botonAnterior.setEnabled(true);
-	                  // boton.setText(""); 
-	                   // botonAnterior.setText("");
+	                    boton.setText(""); 
+	                    botonAnterior.setText("");
 	                    botonAnterior = null;
 	                }
 	            });
