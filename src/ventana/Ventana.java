@@ -43,13 +43,13 @@ public class Ventana extends JFrame{
 		setTitle("Ingresar");
 		setResizable(true);
 		setLocationRelativeTo(null); 
-		setMinimumSize(new Dimension (200,200));
+		setMinimumSize(new Dimension (300,300));
 		setLayout(null);
-		//crear();
+		crear();
 		//crearPanel2();
-		crearPanel3();
+		//crearPanel3();
 		//crearIntereses();
-		// dibujo ();
+		//dibujo ();
 	}
 	
 	void crear () {
@@ -533,8 +533,8 @@ public class Ventana extends JFrame{
 		}
 		
 	}
-	
-*/
+	*/
+
 	
 	/*//casita con rejas
 	public void paint(Graphics g){
