@@ -45,10 +45,10 @@ public class Ventana extends JFrame{
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (300,300));
 		setLayout(null);
-		crear();
+		//crear();
 		//crearPanel2();
 		//crearPanel3();
-		//crearIntereses();
+		crearIntereses();
 		//dibujo ();
 	}
 	
