@@ -8,8 +8,10 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.border.LineBorder;
 
 public class TecladoDijital extends JFrame{
@@ -23,6 +25,10 @@ public class TecladoDijital extends JFrame{
 		setLayout(null);
 		
 		crear();
+		SwingUtilities.invokeLater(() -> {
+            JOptionPane.showMessageDialog(this, "Debe escribir la palabra en el recuadro blanco ");
+        });
+		
 	}
 	
 	void crear () {
@@ -32,6 +38,8 @@ public class TecladoDijital extends JFrame{
 		panel.setLayout(null);
 		panel.setBackground(Color.decode("#F5F1FB"));
 		add(panel);
+		
+		
 		
 		JPanel pantalla = new JPanel();
 		pantalla.setBounds(10, 10, 980,200);
@@ -69,6 +77,9 @@ public class TecladoDijital extends JFrame{
         int mostar = rand.nextInt(listaPalabras.length); 
         palabrasE.setText(listaPalabras[mostar]); 
         palabrasE.setFont(new Font("Sunny Spells Basic", Font.BOLD, 35));
+        
+        
+        
 
 		JPanel teclado = new JPanel();
 		teclado.setBounds(10, 220,980,430);
@@ -76,6 +87,7 @@ public class TecladoDijital extends JFrame{
 		teclado.setBackground(Color.decode("#E9DCFD"));
 		add(teclado);
 		panel.add(teclado, BorderLayout.SOUTH);
+		
 		
 		
         String[] qwerty = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
@@ -116,8 +128,19 @@ public class TecladoDijital extends JFrame{
         teclaBorrar.setBorder(new LineBorder(Color.decode("#6D0FFF"),4));
         teclaBorrar.setBounds(500, 350, 200, 70);
         teclado.add(teclaBorrar);
-        
+         
 	}
+	private void confirmacion() {
+		if (mostar ){
+			
+		}
+		//palabras si son iguales pasa a la siguente palabra
+		//por cada palabra  hace un timer y empieza de nuevo al empezar otra palabra
+    	
+    	
+    	
+        
+    }
 	
 	
 
