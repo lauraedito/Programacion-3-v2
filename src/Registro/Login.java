@@ -144,6 +144,7 @@ public class Login extends JFrame{
 		etiquetaNombre.setFont(new Font("Agency FB", Font.BOLD,25));
 		etiquetaNombre.setForeground(Color.WHITE);
 		panelRegistro.add(etiquetaNombre);
+		
 		JTextField cajaNombre = new JTextField();
 		cajaNombre.setBounds(240, 176, 220, 35);
 		panelRegistro.add(cajaNombre);
@@ -219,10 +220,55 @@ public class Login extends JFrame{
 	                    
 	                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
 	                }
+	                
+	                
+	               
+	        				
+	        				if(cajaNombre.getText().length()<=0) {
+	        					cajaNombre.setBorder(new LineBorder(Color.red,4));
+	        					
+	        				}else {
+	        					cajaNombre.setBorder(new LineBorder(Color.GREEN,4));
+	        				}
+	        				
+	        				if(cajaApellido.getText().length()<=0) {
+	        					cajaApellido.setBorder(new LineBorder(Color.red,4));
+	        					
+	        				}else {
+	        					cajaApellido.setBorder(new LineBorder(Color.GREEN,4));
+	        				}
+	        				
+	        				if(cajacorreo.getText().length()<=0) {
+	        					cajacorreo.setBorder(new LineBorder(Color.red,4));
+	        					
+	        				}else {
+	        					cajacorreo.setBorder(new LineBorder(Color.GREEN,4));
+	        				}
+	        				
+	        				String contra = new String(contrasena.getPassword());
+	        				
+	        				if(contra.length()<=0) {
+	        					contrasena.setBorder(new LineBorder(Color.red,4));
+	        					
+	        				}else {
+	        					contrasena.setBorder(new LineBorder(Color.GREEN,4));
+	        				}
+	        				
+	        				
+	        				if(contra.length()<=0) {
+	        					contrasenaRepetir.setBorder(new LineBorder(Color.red,4));
+	        					
+	        				}else {
+	        					contrasenaRepetir.setBorder(new LineBorder(Color.GREEN,4));
+	        				}
+	        				
+	        				
+	        			 
+
 	            }
 	        });
 		
-		//
+		
 		 JMenuBar barra = new JMenuBar();
 			
 			JMenu lista1 = new JMenu("Inicio");
