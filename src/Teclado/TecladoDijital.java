@@ -141,35 +141,11 @@ public class TecladoDijital extends JFrame   {
         teclaBorrar.setBounds(500, 350, 200, 70);
         teclado.add(teclaBorrar);
         
-        cajateclado.addKeyListener(new KeyAdapter() {
-            
-            public void keyPressed(KeyEvent e) {
-                char keyChar = e.getKeyChar();
-                String keyPressed = String.valueOf(keyChar).toUpperCase();
-
-                for (int i = 0; i < qwerty.length; i++) {
-                    if (qwerty[i].equals(keyPressed)) {
-                        teclas[i].setBackground(Color.YELLOW); // Cambiar color de fondo de la tecla
-                        break;
-                    }
-                }
-            }
-
-            
-            public void keyReleased(KeyEvent e) {
-                char keyChar = e.getKeyChar();
-                String keyReleased = String.valueOf(keyChar).toUpperCase();
-
-                for (int i = 0; i < qwerty.length; i++) {
-                    if (qwerty[i].equals(keyReleased)) {
-                    	teclas[i].setBackground(UIManager.getColor("Panel.background")); // Restaurar color de fondo
-                        break;
-                    }
-                }
-            }
-        });
-         
 	}
+            
+            
+         
+	
 	
 		//palabras si son iguales pasa a la siguente palabra
 		//por cada palabra  hace un timer y empieza de nuevo al empezar otra palabra

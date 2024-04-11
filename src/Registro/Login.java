@@ -220,7 +220,7 @@ public class Login extends JFrame{
 	                    
 	                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
 	                }
-	                
+	                 
 	        				
 	        				if(cajaNombre.getText().length()<=0) {
 	        					cajaNombre.setBorder(new LineBorder(Color.red,4));
