@@ -24,8 +24,8 @@ public class Calculadora extends JFrame{
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (200,200));
 		setLayout(null);
-		//crear ();
-		crearCalculadora();
+		crear ();
+		//crearCalculadora();
 		
 	}
 	

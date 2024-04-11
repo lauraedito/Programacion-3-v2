@@ -4,7 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Random;
+import java.util.Timer;
+import java.awt.event.KeyEvent;
+
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,9 +18,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
-public class TecladoDijital extends JFrame{
+public class TecladoDijital extends JFrame   {
+	
+	JLabel label;
+	
+
+   JLabel[] teclas;
 	
 	public TecladoDijital() {
 		this.setSize(1000, 700);
@@ -128,20 +140,49 @@ public class TecladoDijital extends JFrame{
         teclaBorrar.setBorder(new LineBorder(Color.decode("#6D0FFF"),4));
         teclaBorrar.setBounds(500, 350, 200, 70);
         teclado.add(teclaBorrar);
+        
+        cajateclado.addKeyListener(new KeyAdapter() {
+            
+            public void keyPressed(KeyEvent e) {
+                char keyChar = e.getKeyChar();
+                String keyPressed = String.valueOf(keyChar).toUpperCase();
+
+                for (int i = 0; i < qwerty.length; i++) {
+                    if (qwerty[i].equals(keyPressed)) {
+                        teclas[i].setBackground(Color.YELLOW); // Cambiar color de fondo de la tecla
+                        break;
+                    }
+                }
+            }
+
+            
+            public void keyReleased(KeyEvent e) {
+                char keyChar = e.getKeyChar();
+                String keyReleased = String.valueOf(keyChar).toUpperCase();
+
+                for (int i = 0; i < qwerty.length; i++) {
+                    if (qwerty[i].equals(keyReleased)) {
+                    	teclas[i].setBackground(UIManager.getColor("Panel.background")); // Restaurar color de fondo
+                        break;
+                    }
+                }
+            }
+        });
          
 	}
-	private void confirmacion() {
-		if (mostar ){
-			
-		}
+	
 		//palabras si son iguales pasa a la siguente palabra
 		//por cada palabra  hace un timer y empieza de nuevo al empezar otra palabra
-    	
-    	
-    	
-        
-    }
 	
+    
+    	
+	 
+
+
+	
+
+	    
+    	
 	
 
 }
