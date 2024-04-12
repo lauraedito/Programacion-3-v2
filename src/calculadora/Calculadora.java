@@ -26,7 +26,7 @@ public class Calculadora extends JFrame{
 		setLayout(null);
 		crear ();
 		//crearCalculadora();
-		
+		 
 	}
 	
 	void crear () {

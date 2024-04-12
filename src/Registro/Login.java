@@ -319,7 +319,7 @@ public class Login extends JFrame{
 					//frame.getContentPane().remove(panelLogin);
 					//frame.getContentPane().repaint();
 					//frame.getContentPane().revalidate();
-					//crearLogin(frame);
+					//crearLogin(frame);   ?
 					panelRegistro.setVisible(false);
 					crearLogin(frame);
 				}

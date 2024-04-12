@@ -148,7 +148,7 @@ public class TecladoDijital extends JFrame   {
 	
 	
 		//palabras si son iguales pasa a la siguente palabra
-		//por cada palabra  hace un timer y empieza de nuevo al empezar otra palabra
+		
 	
     
     	
