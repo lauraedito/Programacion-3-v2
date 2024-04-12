@@ -31,8 +31,8 @@ public class Login extends JFrame{
 		setLayout(null);
 		
 		crearLogin(this);
-		
-		//crearRegistro();
+		///crearRecuperacion (this);
+		//crearRegistro(this);
 		
 	}
 	
@@ -40,7 +40,6 @@ public class Login extends JFrame{
 		JPanel panelLogin = new JPanel();
 		
 		panelLogin.setSize(this.getWidth(),this.getHeight());
-		
 		panelLogin.setLocation(0,0);
 		panelLogin.setLayout(null);
 		panelLogin.setBackground(Color.DARK_GRAY);
@@ -50,15 +49,12 @@ public class Login extends JFrame{
 		etiqueta.setBounds(375, 100, 250, 40);
 		etiqueta.setForeground(Color.WHITE);
 		etiqueta.setFont(new Font("Agency FB", Font.BOLD,40));
-		
 		panelLogin.add(etiqueta);
 		
 		JLabel etiqueta2 = new JLabel("Ingrese su usuario: ", 0);
 		etiqueta2.setBounds(390, 200, 220, 35);
 		etiqueta2.setFont(new Font("Agency FB", Font.BOLD,25));
 		etiqueta2.setForeground(Color.WHITE);
-		//etiqueta2.setOpaque(true);
-		//etiqueta2.setBackground(Color.white);
 		panelLogin.add(etiqueta2);
 		
 		JTextField cajaUsuario = new JTextField();
@@ -69,7 +65,6 @@ public class Login extends JFrame{
 		etiquetaPass.setBounds(390, 300, 220, 35);
 		etiquetaPass.setForeground(Color.WHITE);
 		etiquetaPass.setFont(new Font("Agency FB", Font.BOLD,25));
-		
 		panelLogin.add(etiquetaPass);
 		
 		JPasswordField contrasena = new JPasswordField();
@@ -111,22 +106,46 @@ public class Login extends JFrame{
 		
 		JMenuBar barra = new JMenuBar();
 		
-		JMenu lista1 = new JMenu("Inicio");
-		JMenu lista2 = new JMenu("Login");
-		JMenu lista3 = new JMenu("Registro");
-		JMenu lista4 = new JMenu("Carga");
-		JMenu lista5 = new JMenu("Ayuda");
+		JMenu lista1 = new JMenu("Cuenta");
 		
+		JMenuItem login = new JMenuItem("Login");
+		lista1.add(login);
+		
+		JMenuItem registrar = new JMenuItem("Registro");
+		lista1.add(registrar);
+		
+		JMenuItem recuperarCuenta = new JMenuItem("Recuperación de cuenta");
+		lista1.add(recuperarCuenta);
+		 
+		
+		JMenu lista2 = new JMenu("Usuarios");
+		JMenuItem alta = new JMenuItem("Alta");
+		lista2.add(alta);
+		
+		JMenuItem baja = new JMenuItem("Baja");
+		lista2.add(baja);
+		
+		JMenuItem consultar = new JMenuItem("Consultar");
+		lista2.add(consultar);
+		
+		
+		JMenu lista3 = new JMenu("Ayuda");
+		JMenuItem usuario = new JMenuItem("¿Cómo crear un usuario?");
+		lista3.add(usuario);
+		
+		JMenuItem sistema = new JMenuItem("¿Cómo acceder al sistema?");
+		lista3.add(sistema);
+		
+		JMenuItem olvidarContraseña = new JMenuItem("¿Qué pasa si olvidé mi contraseña?");
+		lista3.add(olvidarContraseña);
+
 		barra.add(lista1);
 		barra.add(lista2);
 		barra.add(lista3);
-		barra.add(lista4);
-		barra.add(lista5);
 		
 		add(panelLogin);
 		setJMenuBar(barra);
 		
-		/////////////////////
 		JButton botoncuenta = new JButton("crear cuenta");
 		botoncuenta.setBounds(400, 460, 200, 40);
 		botoncuenta.setFont(new Font("Agency FB", Font.BOLD,30));
@@ -134,10 +153,7 @@ public class Login extends JFrame{
 		
 		botoncuenta.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			//frame.getContentPane().remove(panelLogin);
-			//frame.getContentPane().repaint();
-			//frame.getContentPane().revalidate();
-			//crearLogin(frame);
+			
 			panelLogin.setVisible(false);
 			crearRegistro(frame);
 		}
@@ -145,17 +161,29 @@ public class Login extends JFrame{
 			
 		});
 		
-		//////////////
+		recuperarCuenta.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					panelLogin.setVisible(false);
+					crearRecuperacion(frame);
+				}
+					
+				});
+		
+		registrar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					panelLogin.setVisible(false);
+					crearRegistro(frame);
+				}
+				
+					
+				});
+		 
+		 
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	void crearRegistro (JFrame frame) {
 		JPanel panelRegistro = new JPanel();
 		
@@ -180,7 +208,6 @@ public class Login extends JFrame{
 		JTextField cajaNombre = new JTextField();
 		cajaNombre.setBounds(240, 176, 220, 35);
 		panelRegistro.add(cajaNombre);
-		
 		
 		JLabel etiquetaApellido = new JLabel("Ingrese su apellido ", 0);
 		etiquetaApellido.setBounds(540, 140, 220, 35);
@@ -212,7 +239,6 @@ public class Login extends JFrame{
 		contrasena.setBounds(375, 375, 220, 35);
 		panelRegistro.add(contrasena);
 		
-		
 		JLabel etiquetaContrasenia2 = new JLabel("Confirmar  contraseña  ", 0);
 		etiquetaContrasenia2.setBounds(375, 440, 220, 35);
 		etiquetaContrasenia2.setFont(new Font("Agency FB", Font.BOLD,25));
@@ -229,7 +255,6 @@ public class Login extends JFrame{
 		panelRegistro.add(condiciones);
 		condiciones.setOpaque(false);
 		
-		
 		JButton botonRegistrarse = new JButton("Registrarse");
 		botonRegistrarse.setBounds(375, 570, 220, 40);
 		botonRegistrarse.setFont(new Font("Agency FB", Font.BOLD,30));
@@ -243,90 +268,214 @@ public class Login extends JFrame{
 	                
 	                String contrasenia1 = new String(contrasena.getPassword());
 	                String contrasenia2 = new String(contrasenaRepetir.getPassword());
+	                String nombre = cajaNombre.getText();
+    		        String apellido = cajaApellido.getText();
+    		        String correo = cajacorreo.getText();
+    		        
+    		        boolean aceptaTerminos = condiciones.isSelected();
+    		        
+    		        
+    		        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contrasenia1.isEmpty() || contrasenia2.isEmpty()) {
+    		            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
+    		            if (nombre.isEmpty()) cajaNombre.setBorder(new LineBorder(Color.RED, 4));
+    		            if (apellido.isEmpty()) cajaApellido.setBorder(new LineBorder(Color.RED, 4));
+    		            if (correo.isEmpty()) cajacorreo.setBorder(new LineBorder(Color.RED, 4));
+    		            if (contrasenia1.isEmpty()) contrasena.setBorder(new LineBorder(Color.RED, 4));
+    		            if (contrasenia2.isEmpty()) contrasenaRepetir.setBorder(new LineBorder(Color.RED, 4));
+    		            return;
+    		        }
+    		        
+    		       
+    		        if (!correo.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
+    		            JOptionPane.showMessageDialog(null, "Por favor, ingrese un correo electrónico válido", "Error", JOptionPane.ERROR_MESSAGE);
+    		            cajacorreo.setBorder(new LineBorder(Color.RED, 4));
+    		            return;
+    		        }
+    		        
+    		       
+    		        if (contrasenia1.length() < 8) {
+    		            JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres", "Error", JOptionPane.ERROR_MESSAGE);
+    		            contrasena.setBorder(new LineBorder(Color.RED, 2));
+    		            return;
+    		        }
+    		        
+    		        
+    		        if (!contrasenia1.equals(contrasenia2)) {
+    		            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
+    		            contrasena.setBorder(new LineBorder(Color.RED, 4));
+    		            contrasenaRepetir.setBorder(new LineBorder(Color.RED, 4));
+    		            return;
+    		        }
+    		        
+    		        
+    		        if (!aceptaTerminos) {
+    		            JOptionPane.showMessageDialog(null, "Debe aceptar los términos y condiciones", "Error", JOptionPane.ERROR_MESSAGE);
+    		            return;
+    		        }
+    		        
+    		        
+    		        JOptionPane.showMessageDialog(null, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    				
 
 	                
-	                if (contrasenia1.equals(contrasenia2)) {
-	                    
-	                    JOptionPane.showMessageDialog(null, "Registro exitoso", "exito", JOptionPane.INFORMATION_MESSAGE);
-	                } else {
-	                    
-	                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
-	                }
-	                 
-	        				
-	        				if(cajaNombre.getText().length()<=0) {
-	        					cajaNombre.setBorder(new LineBorder(Color.red,4));
-	        					
-	        				}else {
-	        					cajaNombre.setBorder(new LineBorder(Color.GREEN,4));
-	        				}
-	        				
-	        				if(cajaApellido.getText().length()<=0) {
-	        					cajaApellido.setBorder(new LineBorder(Color.red,4));
-	        					
-	        				}else {
-	        					cajaApellido.setBorder(new LineBorder(Color.GREEN,4));
-	        				}
-	        				
-	        				if(cajacorreo.getText().length()<=0) {
-	        					cajacorreo.setBorder(new LineBorder(Color.red,4));
-	        					
-	        				}else {
-	        					cajacorreo.setBorder(new LineBorder(Color.GREEN,4));
-	        				}
-	        				
-	        				String contra = new String(contrasena.getPassword());
-	        				
-	        				if(contra.length()<=0) {
-	        					contrasena.setBorder(new LineBorder(Color.red,4));
-	        					
-	        				}else {
-	        					contrasena.setBorder(new LineBorder(Color.GREEN,4));
-	        				}
+	                
 	        				
 	        				
-	        				if(contra.length()<=0) {
-	        					contrasenaRepetir.setBorder(new LineBorder(Color.red,4));
-	        					
-	        				}else {
-	        					contrasenaRepetir.setBorder(new LineBorder(Color.GREEN,4));
-	        				}
-	        				
-	        				
-	        			 
-
+	        		
 	            }
 	        });
 		
 		
-		 JMenuBar barra = new JMenuBar();
+		JMenuBar barra = new JMenuBar();
 			
-			JMenu lista1 = new JMenu("Inicio");
-			JMenuItem login = new JMenuItem("Login");
-	        JMenuItem registrar = new JMenuItem("Registrar");
-
+		JMenu lista1 = new JMenu("Cuenta");
+		JMenuItem login = new JMenuItem("Login");
+	    JMenuItem registrar = new JMenuItem("Registro");
+	    JMenuItem recuperarLaCuenta = new JMenuItem("Recuperación de cuenta");
+		lista1.add(recuperarLaCuenta);
+	    
+		JMenu lista2 = new JMenu("Usuarios");
+		JMenuItem altaR = new JMenuItem("Alta");
+		lista2.add(altaR);
+		
+		JMenuItem baja = new JMenuItem("Baja");
+		lista2.add(baja);
+		
+		JMenuItem consultar = new JMenuItem("Consultar");
+		lista2.add(consultar);
+		
+		JMenu lista3 = new JMenu("Ayuda");
+		JMenuItem usuario = new JMenuItem("¿Cómo crear un usuario?");
+		lista3.add(usuario);
+		
+		JMenuItem sistema = new JMenuItem("¿Cómo acceder al sistema?");
+		lista3.add(sistema);
+		
+		JMenuItem olvidarContraseña = new JMenuItem("¿Qué pasa si olvidé mi contraseña?");
+		lista3.add(olvidarContraseña);
+		lista1.add(login);
+	    lista1.add(registrar);
+	    lista1.add(recuperarLaCuenta);
 	        
-	        lista1.add(login);
-	        lista1.add(registrar);
+	    lista2.add(altaR);
+	    lista2.add(baja);
+	    lista2.add(consultar);
+	        
+	    lista3.add(usuario);
+	    lista3.add(sistema);
+	    lista3.add(olvidarContraseña);
 			
-			barra.add(lista1);
-			add(panelRegistro);
-			setJMenuBar(barra);
+		barra.add(lista1);
+		barra.add(lista2);
+		barra.add(lista3);
+			
+		add(panelRegistro);
+		setJMenuBar(barra);
 
 		 //login
 			login.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					//frame.getContentPane().remove(panelLogin);
-					//frame.getContentPane().repaint();
-					//frame.getContentPane().revalidate();
-					//crearLogin(frame);   ?
 					panelRegistro.setVisible(false);
 					crearLogin(frame);
 				}
 				
 					
 				});
-		 
+			
+			recuperarLaCuenta.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelRegistro.setVisible(false);
+					crearRecuperacion(frame);
+				}
+				
+					
+				});
+		    
 		}
+	
+	void crearRecuperacion (JFrame frame) {
+		JPanel panelRe = new JPanel();
+		panelRe.setSize(this.getWidth(),this.getHeight());
+		panelRe.setLocation(0,0);
+		panelRe.setLayout(null);
+		panelRe.setBackground(Color.decode("#432975"));
+		add(panelRe);
+		
+		JLabel recuperacion = new JLabel("Recuperación",0);
+		recuperacion.setBounds(375, 100, 250, 40);
+		recuperacion.setForeground(Color.WHITE);
+		recuperacion.setFont(new Font("Agency FB", Font.BOLD,40));
+		
+		panelRe.add(recuperacion);
+		
+		JMenuBar barra = new JMenuBar();
+		JMenu lista1 = new JMenu("Cuenta");
+		JMenuItem login = new JMenuItem("Login");
+	    JMenuItem registrar = new JMenuItem("Registro");
+	    JMenuItem recuperarLaCuenta = new JMenuItem("Recuperación de cuenta");
+		lista1.add(recuperarLaCuenta);
+	     
+		JMenu lista2 = new JMenu("Usuarios");
+		JMenuItem altaR = new JMenuItem("Alta");
+		lista2.add(altaR);
+		
+		JMenuItem baja = new JMenuItem("Baja");
+		lista2.add(baja);
+		
+		JMenuItem consultar = new JMenuItem("Consultar");
+		lista2.add(consultar);
+		 
+		JMenu lista3 = new JMenu("Ayuda");
+		JMenuItem usuario = new JMenuItem("¿Cómo crear un usuario?");
+		lista3.add(usuario);
+		
+		JMenuItem sistema = new JMenuItem("¿Cómo acceder al sistema?");
+		lista3.add(sistema);
+		
+		JMenuItem olvidarContraseña = new JMenuItem("¿Qué pasa si olvidé mi contraseña?");
+		lista3.add(olvidarContraseña);
+		lista1.add(login);
+	    lista1.add(registrar);
+	    lista1.add(recuperarLaCuenta);
+	        
+	    lista2.add(altaR);
+	    lista2.add(baja);
+	    lista2.add(consultar);
+	        
+	    lista3.add(usuario);
+	    lista3.add(sistema);
+	    lista3.add(olvidarContraseña);
+			
+		barra.add(lista1);
+		barra.add(lista2);
+		barra.add(lista3);
+			
+		add(panelRe);
+		setJMenuBar(barra);
+
+		 //login
+			login.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					panelRe.setVisible(false);
+					crearLogin(frame);
+				}
+				
+					
+				});
+			
+			registrar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					panelRe.setVisible(false);
+					crearRegistro(frame);
+				}
+			});
+		
+	}
 
 }
+
+
+
+
