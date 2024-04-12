@@ -24,18 +24,23 @@ public class Login extends JFrame{
 	public Login() {
 		this.setSize(1000, 700);
 		setTitle("Ingresar");
+		JFrame frame;
 		setResizable(true);
 		setLocationRelativeTo(null); 
 		setMinimumSize(new Dimension (300,300));
 		setLayout(null);
-		//crearLogin();
-		crearRegistro();
+		
+		crearLogin(this);
+		
+		//crearRegistro();
+		
 	}
 	
-	void crearLogin () {
+	void crearLogin (JFrame frame) {
 		JPanel panelLogin = new JPanel();
 		
 		panelLogin.setSize(this.getWidth(),this.getHeight());
+		
 		panelLogin.setLocation(0,0);
 		panelLogin.setLayout(null);
 		panelLogin.setBackground(Color.DARK_GRAY);
@@ -120,11 +125,38 @@ public class Login extends JFrame{
 		
 		add(panelLogin);
 		setJMenuBar(barra);
-
+		
+		/////////////////////
+		JButton botoncuenta = new JButton("crear cuenta");
+		botoncuenta.setBounds(400, 460, 200, 40);
+		botoncuenta.setFont(new Font("Agency FB", Font.BOLD,30));
+		panelLogin.add(botoncuenta);
+		
+		botoncuenta.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			//frame.getContentPane().remove(panelLogin);
+			//frame.getContentPane().repaint();
+			//frame.getContentPane().revalidate();
+			//crearLogin(frame);
+			panelLogin.setVisible(false);
+			crearRegistro(frame);
+		}
+		
+			
+		});
+		
+		//////////////
 		
 	}
 	
-	void crearRegistro () {
+	
+	
+	
+	
+	
+	
+	
+	void crearRegistro (JFrame frame) {
 		JPanel panelRegistro = new JPanel();
 		
 		panelRegistro.setSize(this.getWidth(),this.getHeight());
@@ -278,11 +310,22 @@ public class Login extends JFrame{
 	        lista1.add(registrar);
 			
 			barra.add(lista1);
-			
 			add(panelRegistro);
 			setJMenuBar(barra);
 
-		 
+		 //login
+			login.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					//frame.getContentPane().remove(panelLogin);
+					//frame.getContentPane().repaint();
+					//frame.getContentPane().revalidate();
+					//crearLogin(frame);
+					panelRegistro.setVisible(false);
+					crearLogin(frame);
+				}
+				
+					
+				});
 		 
 		}
 
