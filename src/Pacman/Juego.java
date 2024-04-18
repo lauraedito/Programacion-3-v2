@@ -29,48 +29,63 @@ public class Juego extends JFrame{
 	
 	void crearjuego () {
 		JPanel paneljuego = new JPanel();
-		
 		paneljuego.setSize(this.getWidth(),this.getHeight());
 		paneljuego.setLocation(0,0);
-		//paneljuego.setLayout(null);
-		//paneljuego.setBackground(Color.black);
+		setLayout(null);
 		add(paneljuego);
 		
 		
-		JPanel circulo = new JPanel() {
+		JPanel pantalla = new JPanel();
+	    pantalla.setPreferredSize(new Dimension(1000, 600)); 
+	    pantalla.setBackground(Color.black);
+	    paneljuego.add(pantalla);
+	    
+	    JPanel circulo = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 dibujarCirculo(g);
             }
         };
+        
+        circulo.setPreferredSize(new Dimension(150, 150)); // Establecemos el tamaño preferido del panel circulo
+        circulo.setBackground(Color.decode("#ECFF00"));
+        pantalla.add(circulo);
+	    
+	    
+	        
+	    JPanel reinicio = new JPanel();
+	    reinicio.setPreferredSize(new Dimension(1000, 100)); 
+	    reinicio.setBackground(Color.gray);
+	    paneljuego.add(reinicio);
+	        
+	    JButton btnReinicio = new JButton("Reinicio");
+	    btnReinicio.setBounds(10, 20,100,30);
+	    btnReinicio.setBackground(Color.decode("#4447E6"));
+	    btnReinicio.setForeground(Color.decode("#FCFBFC"));
+	    reinicio.add(btnReinicio);
+	        
 		
-		JPanel pantalla = new JPanel();
-		pantalla.setBounds(0, 0, 1000,600);
-		//pantalla.setLayout(null);
-		pantalla.setBackground(Color.black);
-		paneljuego.add(pantalla, BorderLayout.NORTH); 
-		//pantalla.add(circulo);
-		//pantalla.repaint();
-		
-		/////
-		JPanel reinicio = new JPanel();
-		reinicio.setBounds(0, 600, 1000,100);
-		//reinicio.setLayout(null);
-		reinicio.setBackground(Color.decode("#7E848B"));
-		this.getContentPane().add(reinicio);
-		paneljuego.add(reinicio, BorderLayout.SOUTH);
-		
-		JButton btnReicnicio = new JButton("Reinicio");
-		btnReicnicio.setFont(new Font("Arial", Font.PLAIN, 20));
-		btnReicnicio.setBounds(400, 10, 200, 40);
-		btnReicnicio.setBackground(Color.decode("#4447E6"));
-	//	btnReicnicio.setOpaque(true);
-		btnReicnicio.setForeground(Color.decode("#FCFBFC"));
-		reinicio.add(btnReicnicio);
-		
+		/*
 		 
-		
+	        
+	        // Agregamos el panel circulo al panel pantalla
+	        JPanel circulo = new JPanel() {
+	            @Override
+	            protected void paintComponent(Graphics g) {
+	                super.paintComponent(g);
+	                dibujarCirculo(g);
+	            }
+	        };
+	        circulo.setPreferredSize(new Dimension(150, 150)); // Establecemos el tamaño preferido del panel circulo
+	        circulo.setBackground(Color.decode("#ECFF00"));
+	        pantalla.add(circulo);
+	        
+	       
+	        
+	        
+	        
+	        */
 		
 	}
 	
