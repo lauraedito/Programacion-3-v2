@@ -274,7 +274,7 @@ public class Login extends JFrame{
     		        
     		        boolean aceptaTerminos = condiciones.isSelected();
     		        
-    		        
+    	 	        
     		        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || contrasenia1.isEmpty() || contrasenia2.isEmpty()) {
     		            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
     		            if (nombre.isEmpty()) cajaNombre.setBorder(new LineBorder(Color.RED, 4));
