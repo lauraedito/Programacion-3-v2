@@ -6,8 +6,6 @@ import java.io.FileReader;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
-
 public class JsonButton {
 	 public static void main(String[] args) {
 	        SwingUtilities.invokeLater(new Runnable() {
