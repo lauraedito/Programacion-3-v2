@@ -51,9 +51,6 @@ public class vista extends JFrame {
 
         getContentPane().add(loginPanel);
         
-        
- 
-        
     }
 
     public String getUsername() {
