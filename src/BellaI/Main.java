@@ -12,7 +12,7 @@ public class Main {
 	     
 	     try {
 	            Models model = new Models(url, usuario, contraseña);
-	            AuthView view = new AuthView();
+	            View view = new View();
 	            Controller controller = new Controller(view, model);
 
 	            view.setVisible(true);
